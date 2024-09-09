@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, Post, Query } from "@nestjs/common";
 import { EventService } from "./event.service";
-import { ApiQuery, ApiTags } from "@nestjs/swagger";
+import { ApiBody, ApiQuery, ApiTags } from "@nestjs/swagger";
 import { CreateEventDto } from "./dto/createEvent.dto";
 import { Evento } from "src/schemas/event.schema";
 import { InjectModel } from "@nestjs/mongoose";
@@ -59,6 +59,7 @@ export class EventController {
     }
 
     @Post()
+    @ApiBody({ type: CreateEventDto })
     async createEvent(@Body() createEventDto: CreateEventDto): Promise<Evento> {
         const event = await this.eventService.createEvent(createEventDto);
         const evnts: Evento = event[0];

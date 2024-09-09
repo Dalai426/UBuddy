@@ -1,12 +1,10 @@
 import { Module } from '@nestjs/common';
 import { EventGateway } from './event.gateway';
 import { MongooseModule } from '@nestjs/mongoose';
-
 import { EventController } from './event.controller';
 import { EventService } from './event.service';
 import { EventSchema } from 'src/schemas/event.schema';
 import { CheckSess, SessionCheckerSchema } from 'src/schemas/check.schema';
-
 
 
 @Module({

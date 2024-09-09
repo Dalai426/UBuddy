@@ -15,7 +15,7 @@ export class CreateEventDto {
     @ApiProperty()
     @IsOptional()
     @IsNumber()
-    vote?: string;
+    vote?: number;
 }
 
 export class CityDto {
